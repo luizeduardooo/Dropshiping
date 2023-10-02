@@ -8,7 +8,7 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static void MenuVendedor()
+        public static void MenuVendedor()
         {
             Console.Clear();
             switch (Menu.MenuVendedor())
@@ -17,13 +17,13 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
                 case "1":
-                    CriarProduto();
+                    Produto.CriarProdutoVendedor(produtos);
                     break;
                 case "2":
-                    AlterarProduto(produtos);
+                    Produto.AlterarProduto(produtos);
                     break;
                 case "3":
-                    RetirarProduto(produtos);
+                    Produto.RetirarProduto(produtos);
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
@@ -105,51 +105,6 @@ namespace Drop2._0
                     break;
             }
         }
-
-        
-        public static void ListarProdutos(List<Produto> lista)
-        {
-            for (int i = 0; i < lista.Count(); i++)
-            {
-                Console.Clear();
-                Console.Write($"{i + 1} -");
-                Produto.MostrarProduto(produtos, i);
-                Console.WriteLine();
-            }
-        }
-        public static void AlterarProduto(List<Produto> lista, string mensagem = "")
-        {
-            ListarProdutos(lista);
-            Console.Write("Digite o código do produto que deseja alterar: ");
-            int indice = Convert.ToInt32(Console.ReadLine());
-            lista[indice - 1].CriarProduto();
-        }
-        public static void RetirarProduto(List<Produto> lista)
-        {
-            Console.Clear();
-            ListarProdutos(lista);
-            Console.WriteLine("Deseja retirar algum produto? (S/N)");
-            string resposta = Console.ReadLine();
-            resposta.ToLower();
-            if (resposta == "s")
-            {
-                Console.Write("Digite o código do produto que deseja retirar: ");
-                int indice = Convert.ToInt32(Console.ReadLine());
-                lista.RemoveAt(indice - 1);
-            }
-            else
-            {
-                MostrarMenu();
-            }
-        }
-        public static void CriarProduto()
-        {
-            Produto novoProduto = new Produto();
-            produtos.Add(novoProduto);
-            MenuVendedor();
-        }
-        
-
         static void Main(string[] args)
         {
             StreamWriter listaProdutos;
@@ -173,8 +128,8 @@ namespace Drop2._0
                     MenuProdutos();
                     break;
                 case "3":
-                    ListarProdutos(carrinho);
-                    RetirarProduto(carrinho);
+                    Produto.ListarProdutos(carrinho);
+                    Produto.RetirarProduto(carrinho);
                     break;
                 case "4":
                     break;
@@ -192,9 +147,6 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
             }
-
-
         }
     }
 }
-
