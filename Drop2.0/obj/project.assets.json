@@ -8,19 +8,37 @@
     "net6.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Luiz Eduardo\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\eduardo.rauber\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 01902d95ddb59951ea6a4e6924413e10d8cc4cda
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Luiz Eduardo\\Drop\\Drop2.0\\Drop2.0.csproj",
       "projectName": "Drop2.0",
       "projectPath": "C:\\Users\\Luiz Eduardo\\Drop\\Drop2.0\\Drop2.0.csproj",
       "packagesPath": "C:\\Users\\Luiz Eduardo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Luiz Eduardo\\Drop\\Drop2.0\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj",
+      "projectName": "Drop2.0",
+      "projectPath": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj",
+      "packagesPath": "C:\\Users\\eduardo.rauber\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\obj\\",
+>>>>>>> 01902d95ddb59951ea6a4e6924413e10d8cc4cda
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Luiz Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\eduardo.rauber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 01902d95ddb59951ea6a4e6924413e10d8cc4cda
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
