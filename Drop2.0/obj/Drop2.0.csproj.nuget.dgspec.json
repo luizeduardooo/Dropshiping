@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\djordhan.eyng\\Downloads\\Drop original\\Dropshipping-main\\Drop2.0\\Drop2.0.csproj": {}
+    "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\djordhan.eyng\\Downloads\\Drop original\\Dropshipping-main\\Drop2.0\\Drop2.0.csproj": {
+    "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djordhan.eyng\\Downloads\\Drop original\\Dropshipping-main\\Drop2.0\\Drop2.0.csproj",
+        "projectUniqueName": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj",
         "projectName": "Drop2.0",
-        "projectPath": "C:\\Users\\djordhan.eyng\\Downloads\\Drop original\\Dropshipping-main\\Drop2.0\\Drop2.0.csproj",
-        "packagesPath": "C:\\Users\\djordhan.eyng\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djordhan.eyng\\Downloads\\Drop original\\Dropshipping-main\\Drop2.0\\obj\\",
+        "projectPath": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\Drop2.0.csproj",
+        "packagesPath": "C:\\Users\\eduardo.rauber\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eduardo.rauber\\Drop\\Drop2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\djordhan.eyng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eduardo.rauber\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
