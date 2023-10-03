@@ -65,5 +65,21 @@ namespace Drop2._0
 
             return Console.ReadLine();
         }
+        public static string MenuPagamento()
+        {
+            Console.WriteLine("------- FORMAS DE PAGAMENTO -------");
+            Console.WriteLine();
+            Console.WriteLine("1- Boleto");
+            Console.WriteLine("2- Crédito");
+            Console.WriteLine("3- PIX");
+            Console.WriteLine();
+            Console.WriteLine("0- Retornar ao menu anterior");
+            Console.WriteLine();
+
+            Console.Write("Digite a opção desejada: ");
+
+            return Console.ReadLine();
+            
+        }
     }
 }

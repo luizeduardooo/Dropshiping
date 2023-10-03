@@ -20,9 +20,12 @@ namespace Drop2._0
                     Produto.CriarProdutoVendedor(produtos);
                     break;
                 case "2":
-                    Produto.AlterarProduto(produtos);
+                    Produto.ListarProdutos(produtos);
                     break;
                 case "3":
+                    Produto.AlterarProduto(produtos);
+                    break;
+                case "4":
                     Produto.RetirarProduto(produtos);
                     break;
                 default:
@@ -42,59 +45,102 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
                 case "1":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "vasco");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 0);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
-
                 case "2":
-                    Produto.ListarProdutos(produtos,"flamengo");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 1);
+                    Console.Clear();
+                    Produto.ListarProdutos(produtos, "flamengo");
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "3":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "brasil");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 2);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "4":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "Real Madrid");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 3);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "5":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "Roma");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 4);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "6":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "Chelsea");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 5);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "7":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "Al Nassr");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 6);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "8":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "Al Hilal");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 7);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "9":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "paris saint-germain");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 8);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "10":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "arsenal");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 9);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 case "11":
+                    Console.Clear();
                     Produto.ListarProdutos(produtos, "barcelona");
-                    Produto.AdicionarAoCarrinho(carrinho, produtos, 10);
+                    if (produtos.Count() > 0)
+                    {
+                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                    }
                     MenuProdutos();
                     break;
                 default:
@@ -102,6 +148,20 @@ namespace Drop2._0
                     Console.WriteLine("Tecle ENTER para retornar ao menu");
                     Console.ReadLine();
                     MenuProdutos();
+                    break;
+            }
+        }
+        public static void MenuPagamento()
+        {
+            switch (Menu.MenuPagamento())
+            {
+                case "0":
+                    break;
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
                     break;
             }
         }
@@ -121,7 +181,7 @@ namespace Drop2._0
             switch (Menu.MenuPrincipal())
             {
                 case "0":
-                    break;
+                    return;
                 case "1":
                     Cliente.CadastrarCliente(clientes);
                     break;
@@ -130,9 +190,21 @@ namespace Drop2._0
                     break;
                 case "3":
                     Produto.ListarProdutos(carrinho);
-                    Produto.RetirarProduto(carrinho);
-                    break;
+                    if (carrinho.Count() > 0)
+                    {
+                        Produto.RetirarProduto(carrinho);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Não há produtos adicionados!");
+                        Console.WriteLine("\nTecle ENTER para retornar ao menu principal.");
+                        Console.ReadLine();
+                        MostrarMenu();
+                        break;
+                    }
                 case "4":
+                    MenuPagamento();
                     break;
                 case "9":
                     MenuVendedor();
@@ -148,10 +220,11 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
             }
-            Console.Clear() ;
+            Console.Clear();
             Console.Write("Você saiu!");
             Console.WriteLine();
             Console.WriteLine("\nObrigado por visitar a loja Dropshiping dos Guris!");
         }
     }
 }
+

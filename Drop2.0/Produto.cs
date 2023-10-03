@@ -30,22 +30,20 @@ namespace Drop2._0
             tamanho = Console.ReadLine();
             Console.Write("Digite o valor do produto: ");
             valor = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o nome do Time");
+            Console.Write("Digite o nome do Time: ");
             time = Console.ReadLine();
             time.ToLower();
         }
-        //public static void ListaProdutos(List<Produto> lista, int indice)
-        //{
-        //    Produto produto = lista[indice];
-        //    Console.WriteLine($"{lista[indice].nome} - {lista[indice].descricao}\nTamanho: {lista[indice].tamanho}\nValor: R${lista[indice].valor}");
-        //}
-        public static void AdicionarAoCarrinho(List<Produto> lista1 , List<Produto> lista2, int indice)
+        public static void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
         {
-            Console.WriteLine("Deseja adicionar ao carrinho? (S/N)");
+
+            Console.WriteLine("Deseja adicionar algum produto carrinho? (S/N)");
             string resposta = Console.ReadLine();
             resposta.ToLower();
             if (resposta == "s")
             {
+                Console.WriteLine("Digite o código do produto que deseja adicionar: ");
+                int indice = Convert.ToInt32(Console.ReadLine());
                 lista1.Add(lista2[indice]);
                 Console.Clear();
                 Program.MenuProdutos();
@@ -57,12 +55,23 @@ namespace Drop2._0
         }
         public static void ListarProdutos(List<Produto> lista, string time = "")
         {
-            lista = lista.FindAll(e => e.time == time);
-            for (int i = 0; i < lista.Count(); i++)
-            {            
+            List<Produto> produtosFiltrados = new List<Produto>(); 
+            produtosFiltrados = lista.FindAll(e => e.time == time);
+            if (produtosFiltrados.Count() == 0)
+            {
+                Console.WriteLine("Não há produtos adicionados!");
+                Console.WriteLine("\nTecle ENTER para retornar ao menu de produtos.");
+                Console.ReadLine();
+            }
+            else
+            {
+                produtosFiltrados = lista;
+                for (int i = 0; i < produtosFiltrados.Count(); i++)
+                {
                     Console.Write($"{i + 1} -");
                     Console.WriteLine($"{lista[i].nome} - {lista[i].descricao}\nTamanho: {lista[i].tamanho}\nValor: R${lista[i].valor}");
-                    Console.WriteLine();                 
+                    Console.WriteLine();
+                }
             }
         }
         public static void AlterarProduto(List<Produto> lista, string mensagem = "")
