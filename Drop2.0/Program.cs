@@ -21,6 +21,7 @@ namespace Drop2._0
                     break;
                 case "2":
                     Produto.ListarProdutos(produtos);
+                    MenuVendedor();
                     break;
                 case "3":
                     Produto.AlterarProduto(produtos);

@@ -37,14 +37,14 @@ namespace Drop2._0
         public static void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
         {
 
-            Console.WriteLine("Deseja adicionar algum produto carrinho? (S/N)");
+            Console.WriteLine("Deseja adicionar algum produto ao carrinho? (S/N)");
             string resposta = Console.ReadLine();
             resposta.ToLower();
             if (resposta == "s")
             {
                 Console.WriteLine("Digite o código do produto que deseja adicionar: ");
                 int indice = Convert.ToInt32(Console.ReadLine());
-                lista1.Add(lista2[indice]);
+                lista1.Add(lista2[indice-1]);
                 Console.Clear();
                 Program.MenuProdutos();
             }
@@ -55,7 +55,7 @@ namespace Drop2._0
         }
         public static void ListarProdutos(List<Produto> lista, string time = "")
         {
-            List<Produto> produtosFiltrados = new List<Produto>(); 
+            List<Produto> produtosFiltrados = new List<Produto>();
             produtosFiltrados = lista.FindAll(e => e.time == time);
             if (produtosFiltrados.Count() == 0)
             {
@@ -63,12 +63,12 @@ namespace Drop2._0
                 Console.WriteLine("\nTecle ENTER para retornar ao menu de produtos.");
                 Console.ReadLine();
             }
-            else
+            else if (time != "");
             {
                 produtosFiltrados = lista;
                 for (int i = 0; i < produtosFiltrados.Count(); i++)
                 {
-                    Console.Write($"{i + 1} -");
+                    Console.Write($"{i + 1} - ");
                     Console.WriteLine($"{lista[i].nome} - {lista[i].descricao}\nTamanho: {lista[i].tamanho}\nValor: R${lista[i].valor}");
                     Console.WriteLine();
                 }
