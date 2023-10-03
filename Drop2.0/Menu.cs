@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Drop2._0
 {
    
-    internal class Menu
+    public class Menu
     {
        public static string MenuPrincipal()
         {
