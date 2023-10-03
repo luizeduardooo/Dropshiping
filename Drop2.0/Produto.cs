@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Drop2._0
         public string descricao { get; set; }
         public string tamanho { get; set; }
         public double valor { get; set; }
+        public string time { get; set; }
 
         public Produto()
         {
@@ -28,12 +30,15 @@ namespace Drop2._0
             tamanho = Console.ReadLine();
             Console.Write("Digite o valor do produto: ");
             valor = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite o nome do Time");
+            time = Console.ReadLine();
+            time.ToLower();
         }
-        public static void MostrarProduto(List<Produto> lista, int indice)
-        {
-            Produto produto = lista[indice];
-            Console.WriteLine($"{lista[indice].nome} - {lista[indice].descricao}\nTamanho: {lista[indice].tamanho}\nValor: R${lista[indice].valor}");
-        }
+        //public static void ListaProdutos(List<Produto> lista, int indice)
+        //{
+        //    Produto produto = lista[indice];
+        //    Console.WriteLine($"{lista[indice].nome} - {lista[indice].descricao}\nTamanho: {lista[indice].tamanho}\nValor: R${lista[indice].valor}");
+        //}
         public static void AdicionarAoCarrinho(List<Produto> lista1 , List<Produto> lista2, int indice)
         {
             Console.WriteLine("Deseja adicionar ao carrinho? (S/N)");
@@ -50,14 +55,14 @@ namespace Drop2._0
                 Program.MenuProdutos();
             }
         }
-        public static void ListarProdutos(List<Produto> lista)
+        public static void ListarProdutos(List<Produto> lista, string time = "")
         {
+            lista = lista.FindAll(e => e.time == time);
             for (int i = 0; i < lista.Count(); i++)
-            {
-                Console.Clear();
-                Console.Write($"{i + 1} -");
-                Produto.MostrarProduto(lista, i);
-                Console.WriteLine();
+            {            
+                    Console.Write($"{i + 1} -");
+                    Console.WriteLine($"{lista[i].nome} - {lista[i].descricao}\nTamanho: {lista[i].tamanho}\nValor: R${lista[i].valor}");
+                    Console.WriteLine();                 
             }
         }
         public static void AlterarProduto(List<Produto> lista, string mensagem = "")

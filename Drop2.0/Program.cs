@@ -42,58 +42,58 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
                 case "1":
-                    Produto.MostrarProduto(produtos, 0);
+                    Produto.ListarProdutos(produtos, "vasco");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 0);
                     MenuProdutos();
                     break;
 
                 case "2":
-                    Produto.MostrarProduto(produtos, 1);
+                    Produto.ListarProdutos(produtos,"flamengo");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 1);
                     MenuProdutos();
                     break;
                 case "3":
-                    Produto.MostrarProduto(produtos, 2);
+                    Produto.ListarProdutos(produtos, "brasil");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 2);
                     MenuProdutos();
                     break;
                 case "4":
-                    Produto.MostrarProduto(produtos, 3);
+                    Produto.ListarProdutos(produtos, "Real Madrid");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 3);
                     MenuProdutos();
                     break;
                 case "5":
-                    Produto.MostrarProduto(produtos, 4);
+                    Produto.ListarProdutos(produtos, "Roma");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 4);
                     MenuProdutos();
                     break;
                 case "6":
-                    Produto.MostrarProduto(produtos, 5);
+                    Produto.ListarProdutos(produtos, "Chelsea");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 5);
                     MenuProdutos();
                     break;
                 case "7":
-                    Produto.MostrarProduto(produtos, 6);
+                    Produto.ListarProdutos(produtos, "Al Nassr");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 6);
                     MenuProdutos();
                     break;
                 case "8":
-                    Produto.MostrarProduto(produtos, 7);
+                    Produto.ListarProdutos(produtos, "Al Hilal");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 7);
                     MenuProdutos();
                     break;
                 case "9":
-                    Produto.MostrarProduto(produtos, 8);
+                    Produto.ListarProdutos(produtos, "paris saint-germain");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 8);
                     MenuProdutos();
                     break;
                 case "10":
-                    Produto.MostrarProduto(produtos, 9);
+                    Produto.ListarProdutos(produtos, "arsenal");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 9);
                     MenuProdutos();
                     break;
                 case "11":
-                    Produto.MostrarProduto(produtos, 10);
+                    Produto.ListarProdutos(produtos, "barcelona");
                     Produto.AdicionarAoCarrinho(carrinho, produtos, 10);
                     MenuProdutos();
                     break;
