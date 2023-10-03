@@ -26,6 +26,7 @@ C:\Users\eduar\Desktop\Drop2.0\Drop2.0\obj\Debug\net6.0\refint\Drop2.0.dll
 C:\Users\eduar\Desktop\Drop2.0\Drop2.0\obj\Debug\net6.0\Drop2.0.pdb
 C:\Users\eduar\Desktop\Drop2.0\Drop2.0\obj\Debug\net6.0\Drop2.0.genruntimeconfig.cache
 C:\Users\eduar\Desktop\Drop2.0\Drop2.0\obj\Debug\net6.0\ref\Drop2.0.dll
+<<<<<<< HEAD
 C:\Users\eduardo.rauber\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.exe
 C:\Users\eduardo.rauber\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.deps.json
 C:\Users\eduardo.rauber\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.runtimeconfig.json
@@ -41,3 +42,19 @@ C:\Users\eduardo.rauber\Drop\Drop2.0\obj\Debug\net6.0\refint\Drop2.0.dll
 C:\Users\eduardo.rauber\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.pdb
 C:\Users\eduardo.rauber\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.genruntimeconfig.cache
 C:\Users\eduardo.rauber\Drop\Drop2.0\obj\Debug\net6.0\ref\Drop2.0.dll
+=======
+C:\Users\Luiz Eduardo\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.exe
+C:\Users\Luiz Eduardo\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.deps.json
+C:\Users\Luiz Eduardo\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.runtimeconfig.json
+C:\Users\Luiz Eduardo\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.dll
+C:\Users\Luiz Eduardo\Drop\Drop2.0\bin\Debug\net6.0\Drop2.0.pdb
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.AssemblyInfoInputs.cache
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.AssemblyInfo.cs
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.csproj.CoreCompileInputs.cache
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.dll
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\refint\Drop2.0.dll
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.pdb
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\Drop2.0.genruntimeconfig.cache
+C:\Users\Luiz Eduardo\Drop\Drop2.0\obj\Debug\net6.0\ref\Drop2.0.dll
+>>>>>>> 7d51b8bfc1737163e1666b45cecf0854bd32154a
