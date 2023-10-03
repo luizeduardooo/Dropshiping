@@ -107,6 +107,7 @@ namespace Drop2._0
         }
         static void Main(string[] args)
         {
+            Console.Title = "Dropshipping dos Guris";
             StreamWriter listaProdutos;
             // string caminho = "C:\\users\\eduardo.rauber\\"
             MostrarMenu();
@@ -147,6 +148,10 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
             }
+            Console.Clear() ;
+            Console.Write("Você saiu!");
+            Console.WriteLine();
+            Console.WriteLine("\nObrigado por visitar a loja Dropshiping dos Guris!");
         }
     }
 }
