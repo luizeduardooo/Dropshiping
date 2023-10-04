@@ -56,22 +56,28 @@ namespace Drop2._0
         public static void ListarProdutos(List<Produto> lista, string time = "")
         {
             List<Produto> produtosFiltrados = new List<Produto>();
-            produtosFiltrados = lista.FindAll(e => e.time == time);
-            if (produtosFiltrados.Count() == 0)
+            if (string.IsNullOrEmpty(time))
+            {
+                produtosFiltrados = lista;
+                
+            }
+
+            if (produtosFiltrados.Count == 0)
             {
                 Console.WriteLine("Não há produtos adicionados!");
                 Console.WriteLine("\nTecle ENTER para retornar ao menu de produtos.");
                 Console.ReadLine();
             }
-            else if (time != "");
+            else
             {
-                produtosFiltrados = lista;
-                for (int i = 0; i < produtosFiltrados.Count(); i++)
+                for (int i = 0; i < produtosFiltrados.Count; i++)
                 {
-                    Console.Write($"{i + 1} - ");
-                    Console.WriteLine($"{lista[i].nome} - {lista[i].descricao}\nTamanho: {lista[i].tamanho}\nValor: R${lista[i].valor}");
+                    
+                    Console.WriteLine($"{produtosFiltrados[i].nome} - {produtosFiltrados[i].descricao}\nTamanho: {produtosFiltrados[i].tamanho}\nValor: R${produtosFiltrados[i].valor}");
                     Console.WriteLine();
                 }
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine();
             }
         }
         public static void AlterarProduto(List<Produto> lista, string mensagem = "")
