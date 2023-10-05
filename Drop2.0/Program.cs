@@ -8,6 +8,67 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
+        static void Main(string[] args)
+        {
+            Console.Title = "Dropshipping dos Guris";
+            StreamWriter listaProdutos;
+            // string caminho = "C:\\users\\eduardo.rauber\\"
+            MostrarMenu();
+            Console.ReadLine();
+
+        }
+        public static void MostrarMenu(string mensagem = "")
+        {
+            Console.Clear();
+            Console.WriteLine(mensagem);
+            switch (Menu.MenuPrincipal())
+            {
+                case "0":
+                    return;
+                case "1":
+                    Cliente.CadastrarCliente(clientes);
+                    break;
+                case "2":
+                    MenuProdutos();
+                    break;
+                case "3":
+                    Produto.ListarProdutos(carrinho);
+                    if (carrinho.Count() > 0)
+                    {
+                        Produto.RetirarProduto(carrinho);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Não há produtos adicionados!");
+                        Console.WriteLine("\nTecle ENTER para retornar ao menu principal.");
+                        Console.ReadLine();
+                        MostrarMenu();
+                        break;
+                    }
+                case "4":
+                    MenuPagamento();
+                    break;
+                case "9":
+                    MenuVendedor();
+                    break;
+                case "a":
+                    Cliente.ListarCliente(clientes);
+                    break;
+                default:
+                    Console.WriteLine("Escolha inválida!");
+                    Console.WriteLine("Tecle ENTER para continuar");
+                    Console.ReadLine();
+                    Console.Clear();
+                    MostrarMenu();
+                    break;
+
+            }
+            Console.Clear();
+            Console.Write("Você saiu!");
+            Console.WriteLine();
+            Console.WriteLine("\nObrigado por visitar a loja Dropshiping dos Guris!");
+        }
         public static void MenuVendedor()
         {
             Console.Clear();
@@ -17,7 +78,8 @@ namespace Drop2._0
                     MostrarMenu();
                     break;
                 case "1":
-                    Produto.CriarProdutoVendedor(produtos);
+                    Produto.CriarProduto(produtos);
+                    MenuVendedor();
                     break;
                 case "2":
                     Produto.ListarProdutos(produtos);
@@ -25,9 +87,11 @@ namespace Drop2._0
                     break;
                 case "3":
                     Produto.AlterarProduto(produtos);
+                    MenuVendedor();
                     break;
                 case "4":
                     Produto.RetirarProduto(produtos);
+                    
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
@@ -166,66 +230,10 @@ namespace Drop2._0
                     break;
             }
         }
-        static void Main(string[] args)
-        {
-            Console.Title = "Dropshipping dos Guris";
-            StreamWriter listaProdutos;
-            // string caminho = "C:\\users\\eduardo.rauber\\"
-            MostrarMenu();
-            Console.ReadLine();
-
-        }
-        public static void MostrarMenu(string mensagem = "")
-        {
-            Console.Clear();
-            Console.WriteLine(mensagem);
-            switch (Menu.MenuPrincipal())
-            {
-                case "0":
-                    return;
-                case "1":
-                    Cliente.CadastrarCliente(clientes);
-                    break;
-                case "2":
-                    MenuProdutos();
-                    break;
-                case "3":
-                    Produto.ListarProdutos(carrinho);
-                    if (carrinho.Count() > 0)
-                    {
-                        Produto.RetirarProduto(carrinho);
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Não há produtos adicionados!");
-                        Console.WriteLine("\nTecle ENTER para retornar ao menu principal.");
-                        Console.ReadLine();
-                        MostrarMenu();
-                        break;
-                    }
-                case "4":
-                    MenuPagamento();
-                    break;
-                case "9":
-                    MenuVendedor();
-                    break;
-                case "a":
-                    Cliente.ListarCliente(clientes);
-                    break;
-                default:
-                    Console.WriteLine("Escolha inválida!");
-                    Console.WriteLine("Tecle ENTER para continuar");
-                    Console.ReadLine();
-                    Console.Clear();
-                    MostrarMenu();
-                    break;
-            }
-            Console.Clear();
-            Console.Write("Você saiu!");
-            Console.WriteLine();
-            Console.WriteLine("\nObrigado por visitar a loja Dropshiping dos Guris!");
-        }
     }
 }
+
+
+
+
 
