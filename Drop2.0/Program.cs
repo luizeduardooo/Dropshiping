@@ -10,9 +10,17 @@ namespace Drop2._0
         static List<Produto> carrinho = new List<Produto>();
         static void Main(string[] args)
         {
-            Console.Title = "Dropshipping dos Guris";
-            StreamWriter listaProdutos;
-            // string caminho = "C:\\users\\eduardo.rauber\\"
+            //Console.Title = "Dropshipping dos Guris";
+            //StreamWriter listaProdutos;
+            //string caminho = "C:\\users\\eduar\\Drop\\listaProdutos.txt";
+            //if (!File.Exists(caminho))
+            //{
+            //    listaProdutos = File.CreateText(caminho);
+            //}
+            //else
+            //{ 
+                 
+            //}
             MostrarMenu();
             Console.ReadLine();
 
@@ -32,7 +40,6 @@ namespace Drop2._0
                     MenuProdutos();
                     break;
                 case "3":
-                    Produto.ListarProdutos(carrinho);
                     if (carrinho.Count() > 0)
                     {
                         Produto.RetirarProduto(carrinho);
@@ -86,11 +93,11 @@ namespace Drop2._0
                     MenuVendedor();
                     break;
                 case "3":
-                    Produto.AlterarProduto(produtos);
+                    Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
                     MenuVendedor();
                     break;
                 case "4":
-                    Produto.RetirarProduto(produtos);
+                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
                     
                     break;
                 default:
