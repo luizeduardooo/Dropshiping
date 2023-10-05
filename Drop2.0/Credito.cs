@@ -114,8 +114,10 @@ namespace Drop2._0
                         break;
                 }
                     Console.WriteLine($"Compra finalizada no cartão {BandeiraCartao}, no valor de:R${ValorTotal}, números de parcelas:{Parcelas}, valor das parcelas:R${Parcelas}");
-                   
-            }
+                    Console.WriteLine("O Drop dos guri agradece a preferência, volte sempre!! =) ");
+
+                    Console.ReadLine();
+        }
         }
 
 }
