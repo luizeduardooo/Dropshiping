@@ -1,0 +1,1 @@
+[{"id":"101","nome":"Camisa Vasco","descricao":"Home","tamanho":"G","valor":150,"time":"vasco"},{"id":"102","nome":"Regata Vasco","descricao":"Torcedor","tamanho":"G","valor":110,"time":"vasco"},{"id":"111","nome":"Camisa Flamengo","descricao":"Home","tamanho":"GG","valor":150,"time":"flamengo"}]

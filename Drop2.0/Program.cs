@@ -1,5 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.IO;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 
 namespace Drop2._0
 {
@@ -8,20 +10,19 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
+        static string caminho = @"C:\\users\\eduar\\Drop\\listaProdutos.txt";
         static void Main(string[] args)
-        {
-            //Console.Title = "Dropshipping dos Guris";
-            //StreamWriter listaProdutos;
-            //string caminho = "C:\\users\\eduar\\Drop\\listaProdutos.txt";
-            //if (!File.Exists(caminho))
-            //{
-            //    listaProdutos = File.CreateText(caminho);
-            //}
-            //else
-            //{ 
-                 
-            //}
-            MostrarMenu();
+        {   
+            Console.Title = "Dropshipping dos Guris";
+            if (File.Exists(caminho))
+            {
+                StreamReader streamReader = new StreamReader(caminho);
+                string json = streamReader.ReadToEnd();
+                produtos = JsonSerializer.Deserialize<List<Produto>>(json);
+                streamReader.Close();
+                MostrarMenu();
+            }
+            
             Console.ReadLine();
 
         }
@@ -32,6 +33,10 @@ namespace Drop2._0
             switch (Menu.MenuPrincipal())
             {
                 case "0":
+                    string json = JsonSerializer.Serialize(produtos);
+                    StreamWriter stream = File.CreateText(caminho);
+                    stream.WriteLine(json);
+                    stream.Close();
                     return;
                 case "1":
                     Cliente.CadastrarCliente(clientes);
@@ -145,7 +150,7 @@ namespace Drop2._0
                     break;
                 case "4":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "Real Madrid");
+                    Produto.ListarProdutos(produtos, "real madrid");
                     if (produtos.Count() > 0)
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
@@ -154,7 +159,7 @@ namespace Drop2._0
                     break;
                 case "5":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "Roma");
+                    Produto.ListarProdutos(produtos, "roma");
                     if (produtos.Count() > 0)
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
@@ -163,7 +168,7 @@ namespace Drop2._0
                     break;
                 case "6":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "Chelsea");
+                    Produto.ListarProdutos(produtos, "chelsea");
                     if (produtos.Count() > 0)
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
@@ -172,7 +177,7 @@ namespace Drop2._0
                     break;
                 case "7":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "Al Nassr");
+                    Produto.ListarProdutos(produtos, "al nassr");
                     if (produtos.Count() > 0)
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
@@ -181,7 +186,7 @@ namespace Drop2._0
                     break;
                 case "8":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "Al Hilal");
+                    Produto.ListarProdutos(produtos, "al hilal");
                     if (produtos.Count() > 0)
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);

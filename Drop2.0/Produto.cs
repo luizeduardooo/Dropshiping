@@ -17,10 +17,6 @@ namespace Drop2._0
         public double valor { get; set; }
         public string time { get; set; }
 
-        public Produto()
-        {
-            Popular();
-        }
 
         public void Popular()
         {
@@ -41,6 +37,7 @@ namespace Drop2._0
         public static void CriarProduto(List<Produto> lista)
         {
             Produto novoProduto = new Produto();
+            novoProduto.Popular();
             lista.Add(novoProduto);
             Program.MenuVendedor();
         }
@@ -70,52 +67,55 @@ namespace Drop2._0
                 Console.ReadLine();
             }
         }
-    public static void AlterarProduto(List<Produto> lista, string mensagem = "")
-    {
-        Produto.ListarProdutos(lista);
-        Console.Write("Digite o código do produto que deseja alterar: ");
-        int indice = Convert.ToInt32(Console.ReadLine());
-        lista[indice - 1].Popular();
-        Console.WriteLine(mensagem);
-    }
-    public static void RetirarProduto(List<Produto> lista, string mensagem = "")
-    {
-        Console.Clear();
-        Produto.ListarProdutos(lista);
-        Console.WriteLine("Deseja retirar algum produto? (S/N)");
-        string resposta = Console.ReadLine();
-        resposta.ToLower();
-        if (resposta == "s")
+        public static void AlterarProduto(List<Produto> lista, string mensagem = "")
         {
-            Console.Write("Digite o código do produto que deseja retirar: ");
-            int indice = Convert.ToInt32(Console.ReadLine());
-            lista.RemoveAt(indice - 1);
+            Produto.ListarProdutos(lista);
+            Console.WriteLine("Digite o código do produto que deseja alterar: ");
+            string id = Console.ReadLine();
+            Produto produtoSelecionado = lista.FirstOrDefault(item => item.id == id);
+            lista.Remove(produtoSelecionado);
+            CriarProduto(lista);
             Console.WriteLine(mensagem);
         }
-        else
+        public static void RetirarProduto(List<Produto> lista, string mensagem = "")
         {
-            Program.MostrarMenu();       
-        }
-    }
-    public static void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
-        { 
-        Console.WriteLine("Deseja adicionar algum produto ao carrinho? (S/N)");
-        string resposta = Console.ReadLine();
-        resposta.ToLower();
-        if (resposta == "s")
-        {
-            Console.WriteLine("Digite o código do produto que deseja adicionar: ");
-            string id = Console.ReadLine();
-            Produto produtoSelecionado = lista2.FirstOrDefault(item => item.id == id);
-            lista1.Add(produtoSelecionado);
             Console.Clear();
-            Program.MenuProdutos();
+            Produto.ListarProdutos(lista);
+            Console.WriteLine("Deseja retirar algum produto? (S/N)");
+            string resposta = Console.ReadLine();
+            resposta.ToLower();
+            if (resposta == "s")
+            {
+                Console.Write("Digite o código do produto que deseja retirar: ");
+                string id = Console.ReadLine();
+                Produto produtoSelecionado = lista.FirstOrDefault(item => item.id == id);
+                lista.Remove(produtoSelecionado);
+                Console.WriteLine(mensagem);
+            }
+            else
+            {
+                Program.MostrarMenu();
+            }
         }
-        else
+        public static void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
         {
-            Program.MenuProdutos();
+            Console.WriteLine("Deseja adicionar algum produto ao carrinho? (S/N)");
+            string resposta = Console.ReadLine();
+            resposta.ToLower();
+            if (resposta == "s")
+            {
+                Console.WriteLine("Digite o código do produto que deseja adicionar: ");
+                string id = Console.ReadLine();
+                Produto produtoSelecionado = lista2.FirstOrDefault(item => item.id == id);
+                lista1.Add(produtoSelecionado);
+                Console.Clear();
+                Program.MenuProdutos();
+            }
+            else
+            {
+                Program.MenuProdutos();
+            }
         }
     }
-}
 
 }
