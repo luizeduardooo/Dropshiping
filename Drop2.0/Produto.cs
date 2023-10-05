@@ -83,14 +83,14 @@ namespace Drop2._0
             Produto.ListarProdutos(lista);
             Console.WriteLine("Deseja retirar algum produto? (S/N)");
             string resposta = Console.ReadLine();
-            resposta.ToLower();
-            if (resposta == "s")
+            if (resposta == "s" || resposta == "S")
             {
                 Console.Write("Digite o código do produto que deseja retirar: ");
                 string id = Console.ReadLine();
                 Produto produtoSelecionado = lista.FirstOrDefault(item => item.id == id);
                 lista.Remove(produtoSelecionado);
                 Console.WriteLine(mensagem);
+                Program.MostrarMenu();
             }
             else
             {
@@ -101,8 +101,7 @@ namespace Drop2._0
         {
             Console.WriteLine("Deseja adicionar algum produto ao carrinho? (S/N)");
             string resposta = Console.ReadLine();
-            resposta.ToLower();
-            if (resposta == "s")
+            if (resposta == "s" || resposta == "S")
             {
                 Console.WriteLine("Digite o código do produto que deseja adicionar: ");
                 string id = Console.ReadLine();

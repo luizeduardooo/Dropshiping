@@ -8,6 +8,16 @@ namespace Drop2._0
 {
     public class Forma_de_pagamento
     {
-        protected double ValorTotal;
+        protected static double ValorTotal;
+
+
+        public static double CalcularValor(List<Produto> lista)
+        {
+            for (int i = 0; i < lista.Count(); i++)
+            {
+                ValorTotal += lista[i].valor;
+            }
+                return ValorTotal;
+        }
     }
 }

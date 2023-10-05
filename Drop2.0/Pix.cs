@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace Drop2._0
 {
-    internal class Pix:Forma_de_pagamento
+    public class Pix : Forma_de_pagamento
     {
-        public string ChaveAleatoria { get; set; }
-        public string ChaveEmail { get; set; }
-        public int Cnpj { get; set; }
+        public static string ChaveAleatoria { get; set; }
+        public static string ChaveEmail { get; set; }
+        public static int Cnpj { get; set; }
 
-
-
-
-
-        public void PagamentoPix()
+        public static void PagamentoPix()
         {
             Console.WriteLine("Escolha a chave pix que deseja pagar: 1: Chave aleatória, 2: E-Mail, 3: CNPJ");
             int opcao = Convert.ToInt32(Console.ReadLine());
 
-            switch(opcao) {
+            switch (opcao)
+            {
 
-                case 1: 
-                        Console.WriteLine($"A sua compra ficou no valor de: R${ValorTotal:N2}");
-                        Console.WriteLine("Nossa chave aleatória é: 'q32b8y1s6w0z4v9t' ");
+                case 1:
+                    Console.WriteLine($"A sua compra ficou no valor de: R${ValorTotal:N2}");
+                    Console.WriteLine("Nossa chave aleatória é: 'q32b8y1s6w0z4v9t' ");
 
                     break;
 
-                case 2: 
-                        Console.WriteLine($"A sua compra ficou no valor de: R${ValorTotal:N2}");
-                        Console.WriteLine("Nossa Chave do email é: 'Dropdosguri@Gmail.com' ");
+                case 2:
+                    Console.WriteLine($"A sua compra ficou no valor de: R${ValorTotal:N2}");
+                    Console.WriteLine("Nossa Chave do email é: 'Dropdosguri@Gmail.com' ");
                     break;
 
                 case 3:
@@ -40,8 +37,9 @@ namespace Drop2._0
                     break;
             }
 
-                 Console.WriteLine("O Drop dos guri agradece a preferência, volte sempre!! =) ");
-                Console.ReadLine();
+            Console.WriteLine("O Drop dos guri agradece a preferência, volte sempre!! =) ");
+            Console.ReadLine();
+            Program.MostrarMenu();
         }
     }
 

@@ -10,9 +10,9 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static string caminho = @"C:\\users\\eduar\\Drop\\listaProdutos.txt";
+        static string caminho = @"C:\\users\\eduardo.rauber\\Drop\\listaProdutos.txt";
         static void Main(string[] args)
-        {   
+        {
             Console.Title = "Dropshipping dos Guris";
             if (File.Exists(caminho))
             {
@@ -22,9 +22,7 @@ namespace Drop2._0
                 streamReader.Close();
                 MostrarMenu();
             }
-            
             Console.ReadLine();
-
         }
         public static void MostrarMenu(string mensagem = "")
         {
@@ -59,6 +57,7 @@ namespace Drop2._0
                         break;
                     }
                 case "4":
+                    Forma_de_pagamento.CalcularValor(carrinho);
                     MenuPagamento();
                     break;
                 case "9":
@@ -74,7 +73,6 @@ namespace Drop2._0
                     Console.Clear();
                     MostrarMenu();
                     break;
-
             }
             Console.Clear();
             Console.Write("Você saiu!");
@@ -102,8 +100,9 @@ namespace Drop2._0
                     MenuVendedor();
                     break;
                 case "4":
-                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
                     
+                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
+
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
@@ -233,12 +232,16 @@ namespace Drop2._0
             switch (Menu.MenuPagamento())
             {
                 case "0":
+                    MostrarMenu();
                     break;
-                case "1":
+                case "1":                   
+                    Boleto.PagamentoBoleto();
                     break;
                 case "2":
+                    Credito.PagamentoCredito();
                     break;
                 case "3":
+                    Pix.PagamentoPix();
                     break;
             }
         }
