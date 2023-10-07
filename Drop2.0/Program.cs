@@ -10,7 +10,7 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static string caminho = @"C:\\users\\eduardo.rauber\\Drop\\listaProdutos.txt";
+        static string caminho = @"C:\\Users\\Luiz Eduardo\\Drop\\listaProdutos.txt";
         static void Main(string[] args)
         {
             Console.Title = "Dropshipping dos Guris";
@@ -35,7 +35,7 @@ namespace Drop2._0
                     StreamWriter stream = File.CreateText(caminho);
                     stream.WriteLine(json);
                     stream.Close();
-                    return;
+                    break;
                 case "1":
                     Cliente.CadastrarCliente(clientes);
                     break;
@@ -89,20 +89,15 @@ namespace Drop2._0
                     break;
                 case "1":
                     Produto.CriarProduto(produtos);
-                    MenuVendedor();
                     break;
                 case "2":
                     Produto.ListarProdutos(produtos);
-                    MenuVendedor();
                     break;
                 case "3":
                     Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
-                    MenuVendedor();
                     break;
                 case "4":
-                    
                     Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
-
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
@@ -127,7 +122,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "2":
                     Console.Clear();
@@ -136,7 +130,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "3":
                     Console.Clear();
@@ -145,7 +138,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "4":
                     Console.Clear();
@@ -154,7 +146,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "5":
                     Console.Clear();
@@ -163,7 +154,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "6":
                     Console.Clear();
@@ -172,7 +162,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "7":
                     Console.Clear();
@@ -181,7 +170,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "8":
                     Console.Clear();
@@ -190,7 +178,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "9":
                     Console.Clear();
@@ -199,7 +186,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "10":
                     Console.Clear();
@@ -208,7 +194,6 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 case "11":
                     Console.Clear();
@@ -217,13 +202,11 @@ namespace Drop2._0
                     {
                         Produto.AdicionarAoCarrinho(carrinho, produtos);
                     }
-                    MenuProdutos();
                     break;
                 default:
                     Console.WriteLine("Opção Inválida!");
                     Console.WriteLine("Tecle ENTER para retornar ao menu");
                     Console.ReadLine();
-                    MenuProdutos();
                     break;
             }
         }

@@ -31,8 +31,7 @@ namespace Drop2._0
             Console.Write("Digite o valor do produto: ");
             valor = Convert.ToDouble(Console.ReadLine());
             Console.Write("Digite o nome do Time: ");
-            time = Console.ReadLine();
-            time.ToLower();
+            time = Console.ReadLine().ToLower();
         }
         public static void CriarProduto(List<Produto> lista)
         {
