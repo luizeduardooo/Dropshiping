@@ -247,8 +247,3 @@ namespace Drop2._0
         }
     }
 }
-
-
-
-
-
