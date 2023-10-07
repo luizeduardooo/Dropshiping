@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Drop2._0
 {
-   
+
     public class Menu
     {
-       public static string MenuPrincipal()
+        public static string MenuPrincipal()
         {
             Console.WriteLine("------ MENU PRINCIPAL ------");
             Console.WriteLine();
@@ -75,11 +75,9 @@ namespace Drop2._0
             Console.WriteLine();
             Console.WriteLine("0- Retornar ao menu anterior");
             Console.WriteLine();
-
             Console.Write("Digite a opção desejada: ");
 
             return Console.ReadLine();
-            
         }
     }
 }
