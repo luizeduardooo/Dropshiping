@@ -16,7 +16,7 @@ namespace Drop2._0
             Console.WriteLine("\nAqui está o código para o pagamento do boleto: '34191790000000123456000001111111111539012345' ");
             long numeroPadrao = 3419179000000012345;
             string barcode = GerarCodigoBarra(numeroPadrao);
-            Console.WriteLine("\nOu se prefir, leia o código de barras:\n ");
+            Console.WriteLine("\nOu se preferir, leia o código de barras:\n ");
             Console.WriteLine(barcode);
             Console.WriteLine("\nO Drop dos guri agradece a preferência, volte sempre!! =) ");
             Console.Write("\nPressione ENTER para sair do sistema! ");

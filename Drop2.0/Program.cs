@@ -10,7 +10,7 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static string caminho = @"C:\\Users\\Luiz Eduardo\\Drop\\listaProdutos.txt";
+        static string caminho = @"C:\\Users\\eduardo.rauber\\Drop\\listaProdutos.txt";
         static void Main(string[] args)
         {
             Console.Title = "Dropshipping dos Guris";
@@ -48,6 +48,7 @@ namespace Drop2._0
                     if (carrinho.Count() > 0)
                     {
                         Produto.RetirarProduto(carrinho);
+                        MostrarMenu();
                         break;
                     }
                     else
@@ -94,13 +95,14 @@ namespace Drop2._0
                     break;
                 case "2":
                     Produto.ListarProdutos(produtos);
-                    Program.MenuVendedor();
+                    MenuVendedor();
                     break;
                 case "3":
                     Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
                     break;
                 case "4":
                     Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
+                    MenuVendedor();
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
