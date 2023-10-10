@@ -10,7 +10,6 @@ namespace Drop2._0
     {
         protected static double ValorTotal;
 
-
         public static double CalcularValor(List<Produto> lista)
         {
             for (int i = 0; i < lista.Count(); i++)

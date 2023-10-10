@@ -27,7 +27,9 @@ namespace Drop2._0
         public static void MostrarMenu(string mensagem = "")
         {
             Console.Clear();
+            Console.WriteLine();
             Console.WriteLine(mensagem);
+            Console.WriteLine();
             switch (Menu.MenuPrincipal())
             {
                 case "0":
@@ -50,8 +52,8 @@ namespace Drop2._0
                     }
                     else
                     {
-                        Console.WriteLine("Não há produtos adicionados!");
-                        Console.WriteLine("\nTecle ENTER para retornar ao menu principal.");
+                        Console.WriteLine("\nNão há produtos adicionados!");
+                        Console.Write("Tecle ENTER para retornar ao menu principal.");
                         Console.ReadLine();
                         MostrarMenu();
                         break;
@@ -92,12 +94,13 @@ namespace Drop2._0
                     break;
                 case "2":
                     Produto.ListarProdutos(produtos);
+                    Program.MenuVendedor();
                     break;
                 case "3":
                     Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
                     break;
                 case "4":
-                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
+                    Produto.RetirarProduto(produtos, mensagem: "oi");
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");

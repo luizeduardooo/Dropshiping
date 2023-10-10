@@ -51,7 +51,7 @@ namespace Drop2._0
             if (produtosFiltrados.Count == 0)
             {
                 Console.WriteLine("Não há produtos adicionados!");
-                Console.WriteLine("\nTecle ENTER para retornar ao menu de produtos.");
+                Console.Write("Tecle ENTER para retornar ao menu de produtos. ");
                 Console.ReadLine();
             }
             else
@@ -62,14 +62,14 @@ namespace Drop2._0
                     Console.WriteLine($"{produtosFiltrados[i].nome} - {produtosFiltrados[i].descricao}\nTamanho: {produtosFiltrados[i].tamanho}\nValor: R${produtosFiltrados[i].valor}");
                     Console.WriteLine();
                 }
-                Console.WriteLine("Pressione ENTER para continuar");
+                Console.Write("Pressione ENTER para continuar! ");
                 Console.ReadLine();
             }
         }
         public static void AlterarProduto(List<Produto> lista, string mensagem = "")
         {
             Produto.ListarProdutos(lista);
-            Console.WriteLine("Digite o código do produto que deseja alterar: ");
+            Console.Write("Digite o código do produto que deseja alterar: ");
             string id = Console.ReadLine();
             Produto produtoSelecionado = lista.FirstOrDefault(item => item.id == id);
             lista.Remove(produtoSelecionado);
@@ -78,9 +78,9 @@ namespace Drop2._0
         }
         public static void RetirarProduto(List<Produto> lista, string mensagem = "")
         {
-            Console.Clear();
+            
             Produto.ListarProdutos(lista);
-            Console.WriteLine("Deseja retirar algum produto? (S/N)");
+            Console.Write("Deseja retirar algum produto? (S/N): ");
             string resposta = Console.ReadLine();
             if (resposta == "s" || resposta == "S")
             {
@@ -88,21 +88,21 @@ namespace Drop2._0
                 string id = Console.ReadLine();
                 Produto produtoSelecionado = lista.FirstOrDefault(item => item.id == id);
                 lista.Remove(produtoSelecionado);
+                Program.MenuVendedor();
                 Console.WriteLine(mensagem);
-                Program.MostrarMenu();
             }
             else
             {
-                Program.MostrarMenu();
+                Program.MenuVendedor();
             }
         }
         public static void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
         {
-            Console.WriteLine("Deseja adicionar algum produto ao carrinho? (S/N)");
+            Console.Write("Deseja adicionar algum produto ao carrinho? (S/N): ");
             string resposta = Console.ReadLine();
             if (resposta == "s" || resposta == "S")
             {
-                Console.WriteLine("Digite o código do produto que deseja adicionar: ");
+                Console.Write("Digite o código do produto que deseja adicionar: ");
                 string id = Console.ReadLine();
                 Produto produtoSelecionado = lista2.FirstOrDefault(item => item.id == id);
                 lista1.Add(produtoSelecionado);

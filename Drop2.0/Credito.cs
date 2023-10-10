@@ -80,43 +80,51 @@ namespace Drop2._0
         public static void PagamentoCredito()
         {
             Console.Clear();
-            Console.WriteLine("Qual a bandeira do cartão?");
+            Console.Write("Digite a bandeira do seu cartão: ");
             BandeiraCartao = Console.ReadLine();
 
-            Console.WriteLine("Digite o número do seu cartão: ");
+            Console.Write("Digite o número do seu cartão: ");
             NumeroCartao = Console.ReadLine();
 
-            Console.WriteLine("Digite a validação de três digitos do cartão: ");
+            Console.Write("Digite a validação de três digitos do cartão: ");
             Validacao = Console.ReadLine();
 
+            Console.WriteLine();
             Console.WriteLine("Escolha a forma de parcelamento:");
+            Console.WriteLine();
             Console.WriteLine("1 - À vista");
             Console.WriteLine("2 - 2 parcelas");
             Console.WriteLine("3 - 3 parcelas");
             Console.WriteLine("4 - 4 parcelas ou mais");
+            Console.WriteLine();
+            Console.Write("Digite a forma desejada: ");
             Parcelas = Convert.ToDouble(Console.ReadLine());
 
             switch (Parcelas)
             {
                 case 1:
+                    Console.WriteLine();
                     Console.WriteLine($"Total a pagar: R$ {ValorTotal:N2}");
                     break;
 
                 case 2:
                     ValorParcelas = ValorTotal / Parcelas;
+                    Console.WriteLine();
                     Console.WriteLine($"Valor de cada parcela: R$ {ValorParcelas:N2}");
                     break;
 
                 case 3:
                     ValorParcelas = ValorTotal / 3;
+                    Console.WriteLine();
                     Console.WriteLine($"Valor de cada parcela: R$ {ValorParcelas:N2}");
                     break;
 
                 case 4:
-                    Console.WriteLine("Informe a quantidade de parcelas desejada:");
+                    Console.Write("Informe a quantidade de parcelas desejada: ");
                     Parcelas = Convert.ToInt32(Console.ReadLine());
 
                     ValorParcelas = ValorTotal / Parcelas;
+                    Console.WriteLine();
                     Console.WriteLine($"Valor de cada parcela: R${ValorParcelas:N2}");
                     break;
 
@@ -126,14 +134,15 @@ namespace Drop2._0
                     Console.WriteLine("Opção inválida.");
                     break;
             }
-            Console.WriteLine($"Compra finalizada no cartão {BandeiraCartao}, no valor de:R${ValorTotal:N2}, números de parcelas: {Parcelas}, valor das parcelas: R${ValorParcelas:N2}");
+            Console.WriteLine();
+            Console.WriteLine($"Compra finalizada no cartão {BandeiraCartao}, no valor de: R$ {ValorTotal:N2}, números de parcelas: {Parcelas}, valor das parcelas: R${ValorParcelas:N2}");
+            Console.WriteLine();
             Console.WriteLine("O Drop dos guri agradece a preferência, volte sempre!! =) ");
+            Console.Write("\nPressione ENTER para sair do sistema! ");
 
             Console.ReadLine();
-            Program.MostrarMenu();
         }
     }
-
 }
 
 

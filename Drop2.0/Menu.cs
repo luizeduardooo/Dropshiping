@@ -67,6 +67,7 @@ namespace Drop2._0
         }
         public static string MenuPagamento()
         {
+            Console.Clear();
             Console.WriteLine("------- FORMAS DE PAGAMENTO -------");
             Console.WriteLine();
             Console.WriteLine("1- Boleto");

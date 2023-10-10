@@ -24,7 +24,7 @@ namespace Drop2._0
         {
             Console.Write("Digite seu nome: ");
             nome = Console.ReadLine();
-            Console.Write("Digite o CPF(somente números): ");
+            Console.Write("Digite o CPF (somente números): ");
             cpf = Console.ReadLine();
         }
         public static void CadastrarCliente(List<Cliente> lista)
