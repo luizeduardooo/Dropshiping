@@ -100,7 +100,7 @@ namespace Drop2._0
                     Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
                     break;
                 case "4":
-                    Produto.RetirarProduto(produtos, mensagem: "oi");
+                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
