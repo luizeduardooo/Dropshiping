@@ -47,7 +47,7 @@ namespace Drop2._0
                 case "3":
                     if (carrinho.Count() > 0)
                     {
-                        Produto.RetirarProduto(carrinho);
+                        ProdutoModel.RetirarProduto(carrinho);
                         MostrarMenu();
                         break;
                     }
@@ -82,9 +82,12 @@ namespace Drop2._0
             Console.WriteLine();
             Console.WriteLine("\nObrigado por visitar a loja Dropshiping dos Guris!");
         }
-        public static void MenuVendedor()
+        public static void MenuVendedor(string mensagem = "")
         {
+            
             Console.Clear();
+            Console.WriteLine(mensagem);
+            Console.WriteLine();
             switch (Menu.MenuVendedor())
             {
                 case "0":
@@ -94,15 +97,16 @@ namespace Drop2._0
                     Produto.CriarProduto(produtos);
                     break;
                 case "2":
-                    Produto.ListarProdutos(produtos);
+                    ProdutoModel.ListarProdutos(produtos);
                     MenuVendedor();
                     break;
                 case "3":
-                    Produto.AlterarProduto(produtos, "Produto alterado com sucesso!");
+                    ProdutoModel.AlterarProduto(produtos);
+                    
                     break;
                 case "4":
-                    Produto.RetirarProduto(produtos, "Produto removido com sucesso!");
-                    MenuVendedor();
+                    ProdutoModel.RetirarProduto(produtos);
+                    MenuVendedor("Produto removido com sucesso!");
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
@@ -122,90 +126,90 @@ namespace Drop2._0
                     break;
                 case "1":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "vasco");
+                    ProdutoModel.ListarProdutos(produtos, "vasco");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "2":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "flamengo");
+                    ProdutoModel.ListarProdutos(produtos, "flamengo");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "3":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "brasil");
+                    ProdutoModel.ListarProdutos(produtos, "brasil");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "4":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "real madrid");
+                    ProdutoModel.ListarProdutos(produtos, "real madrid");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "5":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "roma");
+                    ProdutoModel.ListarProdutos(produtos, "roma");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "6":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "chelsea");
+                    ProdutoModel.ListarProdutos(produtos, "chelsea");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "7":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "al nassr");
+                    ProdutoModel.ListarProdutos(produtos, "al nassr");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "8":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "al hilal");
+                    ProdutoModel.ListarProdutos(produtos, "al hilal");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "9":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "paris saint-germain");
+                    ProdutoModel.ListarProdutos(produtos, "paris saint-germain");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "10":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "arsenal");
+                    ProdutoModel.ListarProdutos(produtos, "arsenal");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 case "11":
                     Console.Clear();
-                    Produto.ListarProdutos(produtos, "barcelona");
+                    ProdutoModel.ListarProdutos(produtos, "barcelona");
                     if (produtos.Count() > 0)
                     {
-                        Produto.AdicionarAoCarrinho(carrinho, produtos);
+                        ProdutoModel.AdicionarAoCarrinho(carrinho, produtos);
                     }
                     break;
                 default:
