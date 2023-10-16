@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using Drop2._0.Model;
+using Dapper;
+using MySql.Data;
 
 
 namespace Drop2._0
