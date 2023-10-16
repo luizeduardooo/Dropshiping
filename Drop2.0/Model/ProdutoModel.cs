@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drop2._0
+namespace Drop2._0.Model
 {
     public class ProdutoModel
     {
