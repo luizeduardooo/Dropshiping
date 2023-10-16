@@ -12,18 +12,18 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static string caminho = @"C:\\Users\\djordhan.eyng\\Drop\\listaProdutos.txt";
+       //static string caminho = @"C:\\Users\\eduardo.rauber\\Drop\\listaProdutos.txt";    ---- Estrutura JSON utilizada antes do banco de dados :)
+
         static void Main(string[] args)
         {
             Console.Title = "Dropshipping dos Guris";
-            if (File.Exists(caminho))
-            {
-                StreamReader streamReader = new StreamReader(caminho);
-                string json = streamReader.ReadToEnd();
-                produtos = JsonSerializer.Deserialize<List<Produto>>(json);
-                streamReader.Close();
+            //if (File.Exists(caminho))
+            //{
+            //    StreamReader streamReader = new StreamReader(caminho);
+            //    string json = streamReader.ReadToEnd();
+            //    produtos = JsonSerializer.Deserialize<List<Produto>>(json);
+            //    streamReader.Close();
                 MostrarMenu();
-            }
             Console.ReadLine();
         }
         public static void MostrarMenu(string mensagem = "")
@@ -35,10 +35,10 @@ namespace Drop2._0
             switch (Menu.MenuPrincipal())
             {
                 case "0":
-                    string json = JsonSerializer.Serialize(produtos);
-                    StreamWriter stream = File.CreateText(caminho);
-                    stream.WriteLine(json);
-                    stream.Close();
+                    //string json = JsonSerializer.Serialize(produtos);
+                    //StreamWriter stream = File.CreateText(caminho);
+                    //stream.WriteLine(json);
+                    //stream.Close();
                     break;
                 case "1":
                     Cliente.CadastrarCliente(clientes);
