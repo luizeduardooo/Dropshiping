@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using MySql.Data;
 
-namespace Drop2._0
+namespace Drop2._0.Model
 {
     public class ProdutoModel
     {
