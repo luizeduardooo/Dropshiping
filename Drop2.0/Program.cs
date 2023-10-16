@@ -2,6 +2,8 @@
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
+using Drop2._0.Model;
+
 
 namespace Drop2._0
 {
@@ -10,7 +12,7 @@ namespace Drop2._0
         static List<Cliente> clientes = new List<Cliente>();
         static List<Produto> produtos = new List<Produto>();
         static List<Produto> carrinho = new List<Produto>();
-        static string caminho = @"C:\\Users\\eduardo.rauber\\Drop\\listaProdutos.txt";
+        static string caminho = @"C:\\Users\\djordhan.eyng\\Drop\\listaProdutos.txt";
         static void Main(string[] args)
         {
             Console.Title = "Dropshipping dos Guris";
