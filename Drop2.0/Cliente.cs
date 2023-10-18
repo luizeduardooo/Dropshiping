@@ -6,11 +6,14 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Drop2._0.Model;
+using Drop2._0.Entity;
 
 namespace Drop2._0
 {
-    internal class Cliente
+    public class Cliente
     {
+        private Menu _menu = new Menu();
         public string nome { get; private set; }
         public string cpf { get; private set; }
 
@@ -27,14 +30,14 @@ namespace Drop2._0
             Console.Write("Digite o CPF (somente números): ");
             cpf = Console.ReadLine();
         }
-        public static void CadastrarCliente(List<Cliente> lista)
+        public void CadastrarCliente(List<Cliente> lista)
         {
             Cliente novoCliente = new Cliente();
             lista.Add(novoCliente);
-            Program.MostrarMenu($"{novoCliente.nome} bem-vindo(a)! ");
+            _menu.MostrarMenu($"{novoCliente.nome} bem-vindo(a)! ");
 
         }
-        public static void ListarCliente(List<Cliente> lista)
+        public void ListarCliente(List<Cliente> lista)
         {
             for (int id = 0; id < lista.Count; id++)
             {
@@ -42,7 +45,7 @@ namespace Drop2._0
             }
             Console.WriteLine("Tecle Enter para continuar");
             Console.ReadLine();
-            Program.MostrarMenu();
+            _menu.MostrarMenu();
         }
     }
 }

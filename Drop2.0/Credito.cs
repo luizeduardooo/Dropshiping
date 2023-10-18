@@ -9,6 +9,8 @@ namespace Drop2._0
 {
     public class Credito : Forma_de_pagamento
     {
+        private Menu _menu = new Menu();
+
         public static string BandeiraCartao { get; set; }
         private static string _numeroCartao;
         private static string _senha;
@@ -17,7 +19,7 @@ namespace Drop2._0
         public static double ValorParcelas { get; set; }
 
 
-        public static string NumeroCartao
+        public string NumeroCartao
         {
             get { return _numeroCartao; }
 
@@ -33,7 +35,7 @@ namespace Drop2._0
                     Console.WriteLine("O número do cartão deve ter 16 dígitos.");
                     Console.WriteLine("Pressione ENTER para retornar ao menu de pagamento");
                     Console.ReadLine();
-                    Program.MenuPagamento();
+                    _menu.MenuPagamento();
                 }
             }
 
@@ -56,7 +58,7 @@ namespace Drop2._0
 
         }
 
-        public static string Validacao
+        public string Validacao
         {
             get { return _validacao; }
 
@@ -72,12 +74,12 @@ namespace Drop2._0
                     Console.WriteLine("O CVV deve ter 3 dígitos!");
                     Console.WriteLine("Pressione ENTER para retornar ao menu de pagamento");
                     Console.ReadLine();
-                    Program.MenuPagamento();
+                    _menu.MenuPagamento();
                 }
             }
         }
 
-        public static void PagamentoCredito()
+        public void PagamentoCredito()
         {
             Console.Clear();
             Console.Write("Digite a bandeira do seu cartão: ");

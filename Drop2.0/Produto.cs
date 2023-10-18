@@ -5,11 +5,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Drop2._0.Entity;
+using Drop2._0.Model;
 
 namespace Drop2._0
 {
     public class Produto
     {
+        private Menu _menu = new Menu();
         public string id { get; set; }
         public string nome { get; set; }
         public string descricao { get; set; }
@@ -33,20 +36,20 @@ namespace Drop2._0
             Console.Write("Digite o nome do Time: ");
             time = Console.ReadLine().ToLower();
         }
-        public static void CriarProduto(List<Produto> lista)
+        public void CriarProduto(List<Produto> lista)
         {
             Produto novoProduto = new Produto();
             novoProduto.Popular();
             lista.Add(novoProduto);
-            Program.MenuVendedor();
+            _menu.MenuVendedor();
         }
-        public static void AlterarAtributos(Produto produto)
+        public void AlterarAtributos(Produto produto)
         {
             if (produto == null)
             {
                 Console.WriteLine("Código inválido! Pressione Enter para retornar ao Menu!");
                 Console.ReadLine();
-                Program.MenuVendedor();
+                _menu.MenuVendedor();
             }
             else
             {
@@ -60,7 +63,7 @@ namespace Drop2._0
                 produto.valor = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Digite o nome do Time: ");
                 produto.time = Console.ReadLine().ToLower();
-                Program.MenuVendedor("Produto Alterado com Sucesso!");
+                _menu.MenuVendedor("Produto Alterado com Sucesso!");
             }
         }
         
