@@ -10,8 +10,8 @@ namespace Drop2._0
 {
     public class Boleto : Forma_de_pagamento
     {
-        public static string CodigoAleatorio { get; set; }
-        public static void PagamentoBoleto()
+        private static string CodigoAleatorio { get; set; }
+        public void PagamentoBoleto()
         {
             Console.Clear();
             Console.WriteLine($"\nO valor do seu pedido ficou: R${ValorTotal:N2}");

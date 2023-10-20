@@ -14,7 +14,7 @@ namespace Drop2._0
         public static string ChaveEmail { get; set; }
         public static int Cnpj { get; set; }
 
-        public static void PagamentoPix()
+        public void PagamentoPix()
         {
             Console.WriteLine();
             Console.WriteLine("Escolha a chave pix que deseja pagar: 1: Chave aleatória, 2: E-Mail, 3: CNPJ");
