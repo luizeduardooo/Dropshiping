@@ -10,11 +10,20 @@ namespace Drop2._0
 {
     class Program
     {
-        private static Menu _menu = new Menu();
+        static string caminho = "C:/Users/eduardo.rauber/Drop/ListaProdutos.txt";
         static void Main(string[] args)
         {
+
+            if (File.Exists(caminho))
+            {      
+                StreamReader streamReader = new StreamReader(caminho);
+                string json = streamReader.ReadToEnd();
+                Menu.produtos = JsonSerializer.Deserialize<List<Produto>>(json);
+                streamReader.Close();
+            }
+            Menu menu = new Menu();
             Console.Title = "Dropshipping dos Guris";     
-            _menu.MostrarMenu();
+            menu.MostrarMenu();
         }
     }
 }

@@ -13,15 +13,8 @@ namespace Drop2._0
 {
     public class Cliente
     {
-        private Menu _menu = new Menu();
         public string nome { get; private set; }
         public string cpf { get; private set; }
-
-
-        public Cliente()
-        {
-            Cadastrar();
-        }
 
         private void Cadastrar()
         {
@@ -32,13 +25,16 @@ namespace Drop2._0
         }
         public void CadastrarCliente(List<Cliente> lista)
         {
-            Cliente novoCliente = new Cliente();
-            lista.Add(novoCliente);
-            _menu.MostrarMenu($"{novoCliente.nome} bem-vindo(a)! ");
+            Cliente _novoCliente = new Cliente();
+            _novoCliente.Cadastrar();
+            lista.Add(_novoCliente);
+            Menu _menu = new Menu();
+            _menu.MostrarMenu($"{_novoCliente.nome} bem-vindo(a)! ");
 
         }
         public void ListarCliente(List<Cliente> lista)
         {
+            Menu _menu = new Menu();
             for (int id = 0; id < lista.Count; id++)
             {
                 Console.WriteLine($"{id + 1} - {lista[id].nome}, CPF {lista[id].cpf}");

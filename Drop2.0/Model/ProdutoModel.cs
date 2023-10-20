@@ -13,10 +13,7 @@ using MySql.Data.MySqlClient;
 namespace Drop2._0.Model
 {
     public class ProdutoModel
-    {
-        private Menu _menu = new Menu();
-        private Produto _produto = new Produto();
-
+    {     
         public string connectString = "Server=localhost;Database=Dropshipping;User=root;Password=root;";
         public void ListarProdutos(List<Produto> lista, string time = "")
         {
@@ -46,6 +43,7 @@ namespace Drop2._0.Model
         }
         public void AlterarProduto(List<Produto> lista)
         {
+            Produto _produto = new Produto();
             ListarProdutos(lista);
             Console.Write("Digite o código do produto que deseja alterar: ");
             string id = Console.ReadLine();
@@ -69,6 +67,7 @@ namespace Drop2._0.Model
         }
         public void AdicionarAoCarrinho(List<Produto> lista1, List<Produto> lista2)
         {
+            Menu _menu = new Menu();
             Console.Write("Deseja adicionar algum produto ao carrinho? (S/N): ");
             string resposta = Console.ReadLine().ToLower();
             if (resposta == "s")

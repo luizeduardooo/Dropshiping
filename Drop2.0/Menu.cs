@@ -12,15 +12,9 @@ namespace Drop2._0
 { 
     public class Menu
     {
-        private readonly Boleto _boleto = new Boleto();
-        private Pix _pix = new Pix();
-        private Credito _credito = new Credito();
-        private Cliente _cliente = new Cliente();
-        private ProdutoModel _produtoModel = new ProdutoModel();
-        private Produto _produto = new Produto();
-        private List<Cliente> clientes = new List<Cliente>();
-        private List<Produto> produtos = new List<Produto>();
-        private List<Produto> carrinho = new List<Produto>();
+        public static List<Cliente> clientes = new List<Cliente>();
+        public static List<Produto> produtos = new List<Produto>();
+        public static List<Produto> carrinho = new List<Produto>();
         public string caminho = @"C:\\Users\\eduardo.rauber\\Drop\\listaProdutos.txt";
         public string SwitchMenuPrincipal()
         {
@@ -94,6 +88,8 @@ namespace Drop2._0
         }
         public void MostrarMenu(string mensagem = "")
         {
+            ProdutoModel _produtoModel = new ProdutoModel();
+            Cliente _cliente = new Cliente();
             Console.Clear();
             Console.WriteLine();
             Console.WriteLine(mensagem);
@@ -152,7 +148,8 @@ namespace Drop2._0
         }
         public void MenuVendedor(string mensagem = "")
         {
-
+            ProdutoModel _produtoModel = new ProdutoModel();
+            Produto _produto = new Produto();
             Console.Clear();
             Console.WriteLine(mensagem);
             Console.WriteLine();
@@ -186,6 +183,8 @@ namespace Drop2._0
         }
         public void MenuProdutos()
         {
+            Cliente _cliente = new Cliente();
+            ProdutoModel _produtoModel = new ProdutoModel();
             Console.Clear();
             switch (SwitchMenuProdutos())
             {
@@ -292,8 +291,12 @@ namespace Drop2._0
         }
         public void MenuPagamento()
         {
+            Boleto _boleto = new Boleto();
+            Pix _pix = new Pix();
+            Credito _credito = new Credito();
             switch (SwitchMenuPagamento())
             {
+                
                 case "0":
                     MostrarMenu();
                     break;
