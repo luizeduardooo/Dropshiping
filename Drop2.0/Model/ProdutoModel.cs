@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 namespace Drop2._0.Model
 {
     public class ProdutoModel
-    {     
+    {
         public string connectString = "Server=localhost;Database=Dropshipping;User=root;Password=root;";
         public void ListarProdutos(List<Produto> lista, string time = "")
         {
@@ -90,9 +90,25 @@ namespace Drop2._0.Model
             {
                 string sql = "SELECT * FROM PRODUTO";
                 IEnumerable<ProdutoEntity> produtos = connect.Query<ProdutoEntity>(sql);
+                int linhas = connect.Execute(sql, produtos);
+
+                foreach (ProdutoEntity produto in produtos)
+                {
+                    Console.WriteLine($"Cód {produto.ID} - {produto.NOME} - {produto.DESCRICAO} - Tamanho: {produto.TAMANHO} - R$ {produto.VALOR}");
+                    Console.ReadLine();
+                    Console.WriteLine($"{linhas} executadas");
+                }
             }
-                
-            
+        }
+        public void Create()
+        {
+            using (MySqlConnection connect = new MySqlConnection(connectString))
+            {
+                string sql = "INSERT INTO PRODUTO VALUE (NULL, @NOME, @DESCRICAO, @TAMANHO, @VALOR, @TIME_ID)";
+                IEnumerable<ProdutoEntity> produtos = connect.Query<ProdutoEntity>(sql);
+                int linhas = connect.Execute(sql, produtos);
+
+            }
         }
     }
 }
