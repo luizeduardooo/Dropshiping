@@ -5,13 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
 using Drop2._0.Entity;
 using Drop2._0.Model;
-=======
-using Dapper;
-using MySql.Data;
->>>>>>> main
+
 
 namespace Drop2._0
 {

@@ -6,12 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-<<<<<<< HEAD
 using Drop2._0.Entity;
-=======
 using Dapper;
 using MySql.Data;
->>>>>>> main
+
 
 namespace Drop2._0
 { 

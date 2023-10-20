@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-<<<<<<< HEAD
 using Drop2._0.Entity;
 using Drop2._0.Model;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-=======
-using MySql.Data;
->>>>>>> main
 
 namespace Drop2._0.Model
 {
