@@ -11,7 +11,7 @@ namespace Drop2._0
 {
     class Program
     {
-        static string caminho = "C:/Users/eduardo.rauber/Drop/ListaProdutos.txt";
+        static string caminho = "C:/Users/djordhan.eyng/Drop/ListaProdutos.txt";
         static void Main(string[] args)
         {
             if (File.Exists(caminho))
