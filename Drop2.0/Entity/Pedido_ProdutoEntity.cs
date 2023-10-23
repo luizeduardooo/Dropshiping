@@ -8,7 +8,12 @@ using MySql.Data;
 
 namespace Drop2._0.Entity
 {
-    internal class Pedido_ProdutoEntity
+    public class Pedido_ProdutoEntity
     {
+        public int PEDIDO_ID { get; set; }
+        public int PRODUTO_ID { get; set; }
+        public double VALOR { get; set; }
+        public int QUANTIDADE { get; set; }
+
     }
 }

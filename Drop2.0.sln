@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drop2.0", "Drop2.0\Drop2.0.csproj", "{CE24534D-EC98-44B9-AD6E-76AECF00D232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drop2.0", "Drop2.0\Drop2.0.csproj", "{CE24534D-EC98-44B9-AD6E-76AECF00D232}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helper", "Helper", "{820243AB-1222-4796-98B0-5AF4E325F335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
