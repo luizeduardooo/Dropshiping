@@ -68,6 +68,10 @@ namespace Drop2._0
             Console.WriteLine("3- Alterar produto");
             Console.WriteLine("4- Remover produto");
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("5- Criar Time");
+            Console.WriteLine("6- Listar Times");
+            Console.WriteLine();
             Console.WriteLine("0- Retornar ao menu anterior");
             Console.WriteLine();
             Console.Write("Digite a opção desejada: ");
@@ -153,6 +157,7 @@ namespace Drop2._0
         {
             ProdutoModel _produtoModel = new ProdutoModel();
             Produto _produto = new Produto();
+            TimeModel _time = new TimeModel();
             Console.Clear();
             Console.WriteLine(mensagem);
             Console.WriteLine();
@@ -175,6 +180,12 @@ namespace Drop2._0
                 case "4":
                     _produtoModel.RetirarProduto(produtos);
                     MenuVendedor("Produto removido com sucesso!");
+                    break;
+                case "5":
+                    _time.Criar();
+                    break;
+                case "6":
+                    _time.Ler();
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");

@@ -8,12 +8,12 @@ using Drop2._0.Entity;
 using Drop2._0.Model;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-
+using Org.BouncyCastle.Bcpg;
 
 namespace Drop2._0.Model
 {
     public class ProdutoModel
-    {     
+    {
         public string connectString = "Server=localhost;Database=Dropshipping;User=root;Password=root;";
         public void ListarProdutos(List<Produto> lista, string time = "")
         {
@@ -90,9 +90,51 @@ namespace Drop2._0.Model
             {
                 string sql = "SELECT * FROM PRODUTO";
                 IEnumerable<ProdutoEntity> produtos = connect.Query<ProdutoEntity>(sql);
+                int linhas = connect.Execute(sql, produtos);
+
+                foreach (ProdutoEntity produto in produtos)
+                {
+                    Console.WriteLine($"Cód {produto.ID} - {produto.NOME} - {produto.DESCRICAO} - Tamanho: {produto.TAMANHO} - R$ {produto.VALOR}");
+                    Console.ReadLine();
+                    Console.WriteLine($"{linhas} executadas");
+                }
             }
-                
+        }
+        public ProdutoEntity Popular()
+        {
+            ProdutoEntity _produto = new ProdutoEntity();
+            Console.Write("Digite o nome do produto: ");
+            _produto.NOME = Console.ReadLine();
+            Console.Write("Digite uma descrição do produto: ");
+            _produto.DESCRICAO = Console.ReadLine();
+            Console.Write("Digite o tamanho do produto: ");
+            _produto.TAMANHO = Console.ReadLine();
+            Console.Write("Digite o valor do produto: ");
+            _produto.VALOR = Convert.ToDouble(Console.ReadLine());
+            //_produto.TIME_ID = //não implementado ainda.
+            return _produto;
+
+        }
+        public void Criar()
+        {
+            Popular();
             
+            using (MySqlConnection connect = new MySqlConnection(connectString))
+            {
+                string sql = "INSERT INTO PRODUTO VALUE (NULL, @NOME, @DESCRICAO, @TAMANHO, @VALOR, @TIME_ID)";
+                IEnumerable<ProdutoEntity> produtos = connect.Query<ProdutoEntity>(sql);
+                int linhas = connect.Execute(sql, produtos);
+                Console.WriteLine("Deseja adicionar mais algum produto? S/N");
+                char resposta = 'S';
+                while (resposta == 'S')
+                {
+                   Popular();
+                   Console.WriteLine("Deseja adicionar mais algum produto? S/N");
+                   resposta = Convert.ToChar(Console.ReadLine().ToUpper());
+                }
+
+            }
+
         }
     }
 }

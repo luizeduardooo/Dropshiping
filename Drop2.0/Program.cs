@@ -14,7 +14,6 @@ namespace Drop2._0
         static string caminho = "C:/Users/eduardo.rauber/Drop/ListaProdutos.txt";
         static void Main(string[] args)
         {
-
             if (File.Exists(caminho))
             {      
                 StreamReader streamReader = new StreamReader(caminho);
