@@ -31,19 +31,36 @@ namespace Drop2._0.Model
             using (MySqlConnection conn = new MySqlConnection(connectString))
             {
                 
-                IEnumerable<TimeEntity> times = conn.Query<TimeEntity>("SELECT * FROM TIME");
+                IEnumerable<TimeEntity> times = conn.Query<TimeEntity>("SELECT * FROM TIME ORDER BY ID");
                 Console.Clear();
                 foreach (TimeEntity time in times)
                 {
                     Console.WriteLine($"{time.ID} - {time.NOME_TIME}");
                     
-                }
-                Console.WriteLine("Pressione Enter para retornar ao menu");                Console.ReadLine();
-                Menu menuVendedor = new Menu();
-                menuVendedor.MenuVendedor();
-                
+                }               
             }
         }
-        public void 
+        public void Atualizar()
+        {
+            Ler();
+            Console.Write("Digite a ID do time que gostaria de alterar: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            using (MySqlConnection conn = new MySqlConnection(connectString))
+            {
+                string sql = "SELECT ID, NOME_TIME FROM TIME WHERE ID = @ID";
+                var parameters = new { ID = id };
+                TimeEntity time = conn.QueryFirst<TimeEntity>(sql, parameters);
+                Console.Write("Digite o nome do novo time: ");
+                time.NOME_TIME = Console.ReadLine();
+                sql = "UPDATE TIME SET NOME_TIME = @NOME_TIME WHERE ID = @ID";
+                conn.Execute(sql, time);
+                Console.WriteLine("Time alterado com sucesso!");
+            }
+        }
+        public void Deletar()
+        {
+            Ler();
+        }
     }
 }

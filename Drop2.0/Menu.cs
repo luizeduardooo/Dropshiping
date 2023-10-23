@@ -71,6 +71,7 @@ namespace Drop2._0
             Console.WriteLine();
             Console.WriteLine("5- Criar Time");
             Console.WriteLine("6- Listar Times");
+            Console.WriteLine("7- Alterar Times");
             Console.WriteLine();
             Console.WriteLine("0- Retornar ao menu anterior");
             Console.WriteLine();
@@ -186,6 +187,13 @@ namespace Drop2._0
                     break;
                 case "6":
                     _time.Ler();
+                    Console.WriteLine("Pressione Enter para retornar ao menu");
+                    Console.ReadLine();
+                    Menu menuVendedor = new Menu();
+                    menuVendedor.MenuVendedor();
+                    break;
+                case "7":
+                    _time.Alterar();
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
