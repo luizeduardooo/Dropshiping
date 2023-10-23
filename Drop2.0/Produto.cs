@@ -21,28 +21,10 @@ namespace Drop2._0
         public double valor { get; set; }
         public string time { get; set; }
 
-
-        public void Popular()
-        {
-            Console.Write("Digite o código do produto: ");
-            id = Console.ReadLine();
-            Console.Write("Digite o nome do produto: ");
-            nome = Console.ReadLine();
-            Console.Write("Digite uma descrição do produto: ");
-            descricao = Console.ReadLine();
-            Console.Write("Digite o tamanho do produto: ");
-            tamanho = Console.ReadLine();
-            Console.Write("Digite o valor do produto: ");
-            valor = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o nome do Time: ");
-            time = Console.ReadLine().ToLower();
-        }
         public void CriarProduto(List<Produto> lista)
         {
-            Produto novoProduto = new Produto();
+            ProdutoModel novoProduto = new ProdutoModel();
             novoProduto.Popular();
-            lista.Add(novoProduto);
-            _menu.MenuVendedor();
         }
         public void AlterarAtributos(Produto produto)
         {

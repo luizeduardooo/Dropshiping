@@ -8,7 +8,10 @@ using MySql.Data;
 
 namespace Drop2._0.Entity
 {
-    internal class TimeEntity
+    public class TimeEntity
     {
+        public int ID { get; set; }
+        public string NOME_TIME { get; set; }
+
     }
 }
