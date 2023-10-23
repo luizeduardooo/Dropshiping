@@ -193,7 +193,7 @@ namespace Drop2._0
                     menuVendedor.MenuVendedor();
                     break;
                 case "7":
-                    _time.Alterar();
+                    _time.Atualizar();
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");
