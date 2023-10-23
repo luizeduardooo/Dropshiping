@@ -8,7 +8,11 @@ using MySql.Data;
 
 namespace Drop2._0.Entity
 {
-    internal class EstadoEntity
+    public class EstadoEntity
     {
+        public int ID { get; set; } 
+        public string NOME { get; set; }
+        public string UF { get; set; }
+
     }
 }
