@@ -210,6 +210,13 @@ namespace Drop2._0
                 case "10":
                     _estado.Ler();
                     break;
+                case "11":
+                    _estado.Atualizar();
+                    break;
+                case "12":
+                    _estado.Deletar();
+                    break;
+
                 default:
                     Console.WriteLine("Opção inválida!");
                     Console.WriteLine("Tecle ENTER para retornar ao menu");

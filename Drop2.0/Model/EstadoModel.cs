@@ -43,16 +43,49 @@ namespace Drop2._0.Model
                 }
                 Console.ReadLine();
             }
-
-
-
         }
 
+        public void Atualizar()
+        {
+            Ler();
 
 
+            Console.WriteLine("Digite o ID que desejar mudar");
+            int id = Convert.ToInt32(Console.ReadLine());
 
+            using (MySqlConnection conn = new MySqlConnection(connectString))
+            {
+                string sql = "SELECT ID, NOME, UF FROM ESTADO WHERE ID = @ID";
+                var parameters = new { ID = id };
+                EstadoEntity estado = conn.QueryFirst<EstadoEntity>(sql, parameters);
+                Console.Write("Digite o nome do novo time: ");
+                estado.NOME = Console.ReadLine();
 
+                Console.Write("Digite a nova sigla do estado: ");
+                estado.UF = Console.ReadLine();
 
+                sql = "UPDATE ESTADO SET NOME, UF = @NOME, @UF WHERE ID = @ID";
+                conn.Execute(sql, estado);
+                Console.WriteLine("Estado alterado com sucesso!");
+            }
+
+        }
+        public void Deletar()
+        {
+            Ler();
+
+            Console.WriteLine("Digite o ID do estado a ser excluido");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            using (MySqlConnection conn = new MySqlConnection(connectString))
+            {
+                string sql = "DELETE FROM ESTADO WHERE ID = @ID";
+                var parameters = new { ID = id };
+                conn.Execute(sql, parameters);
+                Console.WriteLine("Estado excluido com sucesso!");
+            }
+
+        }
     }
 }
 
