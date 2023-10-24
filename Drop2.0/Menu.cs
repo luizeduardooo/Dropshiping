@@ -15,9 +15,14 @@ namespace Drop2._0
 { 
     public class Menu
     {
+        private TimeModel _timeModel = new TimeModel();
+        private EstadoModel _estado = new EstadoModel();
+        private ProdutoModel _produtoModel = new ProdutoModel();
+
         public static List<Cliente> clientes = new List<Cliente>();
         public static List<Produto> produtos = new List<Produto>();
         public static List<Produto> carrinho = new List<Produto>();
+        
         public string caminho = @"C:\\Users\\eduardo.rauber\\Drop\\listaProdutos.txt";
         public string SwitchMenuPrincipal()
         {
@@ -72,7 +77,10 @@ namespace Drop2._0
             Console.WriteLine("5- Criar Time");
             Console.WriteLine("6- Listar Times");
             Console.WriteLine("7- Alterar Times");
+            Console.WriteLine("8- Deletar Time");
             Console.WriteLine();
+            Console.WriteLine("9- Criar Estado");
+            Console.WriteLine("10- Ler Estados");
             Console.WriteLine("0- Retornar ao menu anterior");
             Console.WriteLine();
             Console.Write("Digite a opção desejada: ");
@@ -156,9 +164,7 @@ namespace Drop2._0
         }
         public void MenuVendedor(string mensagem = "")
         {
-            ProdutoModel _produtoModel = new ProdutoModel();
             Produto _produto = new Produto();
-            TimeModel _time = new TimeModel();
             Console.Clear();
             Console.WriteLine(mensagem);
             Console.WriteLine();
@@ -183,17 +189,26 @@ namespace Drop2._0
                     MenuVendedor("Produto removido com sucesso!");
                     break;
                 case "5":
-                    _time.Criar();
+                    _timeModel.Criar();
                     break;
                 case "6":
-                    _time.Ler();
+                    _timeModel.Ler();
                     Console.WriteLine("Pressione Enter para retornar ao menu");
                     Console.ReadLine();
                     Menu menuVendedor = new Menu();
                     menuVendedor.MenuVendedor();
                     break;
                 case "7":
-                    _time.Atualizar();
+                    _timeModel.Atualizar();
+                    break;
+                case "8":
+                    _timeModel.Deletar();
+                    break;
+                case "9":
+                    _estado.Criar();
+                    break;
+                case "10":
+                    _estado.Ler();
                     break;
                 default:
                     Console.WriteLine("Opção inválida!");

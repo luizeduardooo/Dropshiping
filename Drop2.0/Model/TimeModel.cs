@@ -40,7 +40,6 @@ namespace Drop2._0.Model
                 }               
             }
         }
-<<<<<<< HEAD
         public void Atualizar()
         {
             Ler();
@@ -62,9 +61,16 @@ namespace Drop2._0.Model
         public void Deletar()
         {
             Ler();
+            Console.Write("Digite a ID to time: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            using (MySqlConnection conn = new MySqlConnection(connectString))
+            {
+                string sql = "DELETE FROM TIME WHERE ID = @ID";
+                var parameters = new { ID = id };
+                conn.Execute(sql, parameters);
+                Console.WriteLine("Time excluido com sucesso!");
+            }
         }
-=======
-        
->>>>>>> 98c1ceefa7f98501a2145fcae96973ac999e444b
     }
 }
