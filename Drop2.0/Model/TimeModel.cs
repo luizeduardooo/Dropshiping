@@ -71,6 +71,7 @@ namespace Drop2._0.Model
                 conn.Execute(sql, parameters);
                 Console.WriteLine("Time excluido com sucesso!");
             }
+            //Ola
         }
     }
 }
