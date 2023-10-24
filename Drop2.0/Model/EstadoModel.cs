@@ -23,7 +23,7 @@ namespace Drop2._0.Model
 
             using (MySqlConnection conn = new MySqlConnection(connectString))
             {
-                string sql = "INSERT INTO TIME VALUE (NULL, @NOME_TIME)";
+                string sql = "INSERT INTO ESTADO VALUE (NULL, @NOME, @UF)";
                 int linhas = conn.Execute(sql, estado);
                 Console.WriteLine($"{linhas} linhas adicionadas");
             }
@@ -41,7 +41,7 @@ namespace Drop2._0.Model
                 {
                     Console.WriteLine($"{estados.ID}, Nome do estado:{estados.NOME} , sigla do estado {estados.UF}");
                 }
-
+                Console.ReadLine();
             }
 
 

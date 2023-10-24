@@ -13,7 +13,7 @@ namespace Drop2._0
 {
     public class Produto
     {
-        private Menu _menu = new Menu();
+
         public string id { get; set; }
         public string nome { get; set; }
         public string descricao { get; set; }
@@ -32,7 +32,7 @@ namespace Drop2._0
             {
                 Console.WriteLine("Código inválido! Pressione Enter para retornar ao Menu!");
                 Console.ReadLine();
-                _menu.MenuVendedor();
+              
             }
             else
             {
@@ -46,7 +46,7 @@ namespace Drop2._0
                 produto.valor = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Digite o nome do Time: ");
                 produto.time = Console.ReadLine().ToLower();
-                _menu.MenuVendedor("Produto Alterado com Sucesso!");
+               
             }
         }
         
